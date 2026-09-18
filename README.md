@@ -4,6 +4,8 @@ A fork of [mattpocock/skills](https://github.com/mattpocock/skills), with my own
 
 Matt's set is the foundation and most of what's here is his. I track his repo, take his changes as he ships them, and offer mine back where they're generally useful. If you want the original, unmodified and properly supported, go to [his repo](https://github.com/mattpocock/skills) and [his newsletter](https://www.aihero.dev/s/skills-newsletter). Take this one if you specifically want my version. Everything below the installation section is Matt's writing, kept as he wrote it.
 
+What's mine lives in [`skills/product-management/`](./skills/product-management/README.md): `/grill-bet` grills a product bet into a PRD-lite or PR/FAQ, keeping the problem separate from the solution as it goes.
+
 Developing real applications is hard. Approaches like GSD, BMAD, and Spec-Kit try to help by owning the process. But while doing so, they take away your control and make bugs in the process hard to resolve.
 
 These skills are designed to be small, easy to adapt, and composable. They work with any model. Hack around with them. Make them your own.

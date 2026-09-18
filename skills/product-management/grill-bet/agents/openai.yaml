@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Bet"
+  short_description: "Grill a product bet into a PRD-lite or PR/FAQ"
+policy:
+  allow_implicit_invocation: false

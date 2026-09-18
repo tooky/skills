@@ -1,6 +1,6 @@
 {
   "name": "tooky-skills",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Steve Tooke's agent skills, forked from Matt Pocock's set: grilling, spec/ticket flows, TDD, code review, domain modelling and more.",
   "author": {
     "name": "Steve Tooke",
@@ -16,7 +16,8 @@
     "code-review",
     "grilling",
     "domain-modeling",
-    "productivity"
+    "productivity",
+    "product-management"
   ],
   "skills": [
     "./skills/engineering/ask-matt",
@@ -43,6 +44,8 @@
     "./skills/productivity/teach",
     "./skills/productivity/to-questionnaire",
     "./skills/productivity/wait-what",
-    "./skills/productivity/writing-for-agents"
+    "./skills/productivity/writing-for-agents",
+    "./skills/product-management/grill-bet",
+    "./skills/product-management/bet-writing"
   ]
 }
