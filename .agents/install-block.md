@@ -1,61 +1,50 @@
 # The canonical install block
 
-One install story, one wording. `README.md`, `.changeset/*`, and every page under `docs/` must say **this** and nothing else. Change it here first, then propagate.
+One install story, one wording. `README.md` must say **this** and nothing else. Change it here first, then propagate.
 
-`mattpocock-skills` is listed in **Claude Code's official marketplace** (configured name `claude-plugins-official`, source repo `anthropics/claude-plugins-official`), which every Claude Code install has out of the box. There is no marketplace to add first. Official Anthropic marketplaces have auto-update enabled by default ([discover-plugins](https://code.claude.com/docs/en/discover-plugins)), so "updates arrive automatically" is a true claim, not a hope.
+This is a fork of `mattpocock/skills`. Matt's copy of this file describes **his** install story: an official-marketplace listing and [skills.sh](https://skills.sh/mattpocock/skills). Neither is true of this repo, so this file diverges from upstream permanently. On a sync, keep this version and only read his for changes worth mirroring.
 
 ## Claude Code: the plugin
 
+`.claude-plugin/marketplace.json` makes this repo its own single-plugin marketplace. That is the whole install story here: nothing is published, and there is no listing to wait on.
+
 <canonical-block name="claude-code">
 
-```bash
-claude plugins install mattpocock-skills
-```
-
-Or, from inside a session:
+From inside a Claude Code session:
 
 ```
-/plugin install mattpocock-skills
+/plugin marketplace add tooky/skills
+/plugin install tooky-skills@tooky
 ```
 
-It's in Claude Code's official marketplace, so there's nothing to add first, and updates arrive automatically.
+This repo is its own single-plugin marketplace, so there is nothing to add first and nothing published anywhere. You get the whole set as a managed bundle; run `/plugin update tooky-skills` when you want the latest.
 
 </canonical-block>
 
-## Codex, and other agents: skills.sh
+To test an unpushed commit, point the marketplace at the working copy instead:
 
-The plugin is Claude Code only. Everywhere else, [skills.sh](https://skills.sh/mattpocock/skills) copies editable skill files into the project. Use the whole-set form on `README.md`:
-
-<canonical-block name="skills-sh-whole-set">
-
-```bash
-npx skills@latest add mattpocock/skills
+```
+/plugin marketplace add ~/Code/tooky/skills
 ```
 
-Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take: make sure `setup-matt-pocock-skills` is one of them.**
+## Working on the skills: link-skills.sh
+
+The plugin is a snapshot copy, so your own edits are invisible until you update it. For authoring, `scripts/link-skills.sh` symlinks every skill into `~/.claude/skills` and `~/.agents/skills` (which also covers Codex and other Agent Skills harnesses), so an edit is live in the next session.
+
+<canonical-block name="link-skills">
+
+```bash
+./scripts/link-skills.sh
+```
+
+That symlinks every skill into `~/.claude/skills` and `~/.agents/skills`, which also covers Codex and other Agent Skills harnesses. An edit in the repo is live in your next session, with no reinstall step.
 
 </canonical-block>
-
-…and the single-skill form wherever one skill is named on its own. Note that **`docs/` pages are not a consumer of this block**: ai-hero renders the install widget above the body, so a page that writes the commands out duplicates it. See [writing-docs.md](./writing-docs.md).
-
-<canonical-block name="skills-sh-one-skill">
-
-```bash
-npx skills@latest add mattpocock/skills --skill=<name>
-```
-
-```bash
-npx skills@latest update <name>
-```
-
-</canonical-block>
-
-`skills@latest` is the pinned spelling in all three. The pages under `docs/` used to carry their own copy of these commands; those blocks are now deleted rather than corrected, because the site renders the install commands itself.
 
 ## The two routes are exclusive
 
-The plugin is a managed, read-only bundle you subscribe to. skills.sh writes files you own and edit. Installing both leaves the user with every skill twice: always say "pick one".
+The plugin is a managed, read-only bundle you subscribe to. The symlinks point at a repo you edit. Installing both leaves you with every skill twice: always say "pick one".
 
 ## Not the install story
 
-`.claude-plugin/marketplace.json` makes the repo its own single-plugin marketplace (`/plugin marketplace add mattpocock/skills`, then `/plugin install mattpocock-skills@mattpocock`). The official listing supersedes it. It is kept as a fallback for installing the repo directly (an unreleased commit, or a fork), and is **not** documented to users.
+`npx skills@latest add mattpocock/skills` installs **Matt's** set, not this one. `skills.sh/tooky/skills` is not a listing that exists. Neither belongs in this repo's docs.

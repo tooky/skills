@@ -1,13 +1,13 @@
 {
-  "name": "mattpocock-skills",
+  "name": "tooky-skills",
   "version": "1.2.3",
-  "description": "Matt Pocock's agent skills for real engineering: grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+  "description": "Steve Tooke's agent skills, forked from Matt Pocock's set: grilling, spec/ticket flows, TDD, code review, domain modelling and more.",
   "author": {
-    "name": "Matt Pocock",
-    "url": "https://www.aihero.dev"
+    "name": "Steve Tooke",
+    "url": "https://tooky.uk"
   },
-  "homepage": "https://www.aihero.dev/s/skills-newsletter",
-  "repository": "https://github.com/mattpocock/skills",
+  "homepage": "https://github.com/tooky/skills",
+  "repository": "https://github.com/tooky/skills",
   "license": "MIT",
   "keywords": [
     "engineering",

@@ -1,73 +1,38 @@
-<p>
-  <a href="https://www.aihero.dev/s/skills-newsletter">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1777382277/skills-repo-dark_2x.png">
-      <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1777382277/skill-repo-light_2x.png">
-      <img alt="Skills" src="https://res.cloudinary.com/total-typescript/image/upload/v1777382277/skill-repo-light_2x.png" width="369">
-    </picture>
-  </a>
-</p>
-
 # Skills For Real Engineers
 
-[![skills.sh](https://skills.sh/b/mattpocock/skills)](https://skills.sh/mattpocock/skills)
+A fork of [mattpocock/skills](https://github.com/mattpocock/skills), with my own changes on top.
 
-My agent skills that I use every day to do real engineering - not vibe coding.
+Matt's set is the foundation and most of what's here is his. I track his repo, take his changes as he ships them, and offer mine back where they're generally useful. If you want the original, unmodified and properly supported, go to [his repo](https://github.com/mattpocock/skills) and [his newsletter](https://www.aihero.dev/s/skills-newsletter). Take this one if you specifically want my version. Everything below the installation section is Matt's writing, kept as he wrote it.
 
 Developing real applications is hard. Approaches like GSD, BMAD, and Spec-Kit try to help by owning the process. But while doing so, they take away your control and make bugs in the process hard to resolve.
 
-These skills are designed to be small, easy to adapt, and composable. They work with any model. They're based on decades of engineering experience. Hack around with them. Make them your own. Enjoy.
+These skills are designed to be small, easy to adapt, and composable. They work with any model. Hack around with them. Make them your own.
 
-If you want to keep up with changes to these skills, and any new ones I create, you can join ~60,000 other devs on my newsletter:
-
-[Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
-
-## Installation (30-second setup)
-
-Two ways in, two philosophies. **The [Claude Code plugin](https://code.claude.com/docs/en/plugins)** installs the whole set as a managed, read-only bundle that updates when I ship, so you subscribe rather than fork. **[skills.sh](https://skills.sh/mattpocock/skills)** copies editable skill files into your project, so you can hack on them and make them your own. Pick one: installing both leaves you with every skill twice.
+## Installation
 
 ### 1. Get the skills
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugins install mattpocock-skills
-```
-
-Or, from inside a session:
+From inside a Claude Code session:
 
 ```
-/plugin install mattpocock-skills
+/plugin marketplace add tooky/skills
+/plugin install tooky-skills@tooky
 ```
 
-It's in Claude Code's official marketplace, so there's nothing to add first, and updates arrive automatically.
-
-</details>
+This repo is its own single-plugin marketplace, so there is nothing to add first and nothing published anywhere. You get the whole set as a managed bundle; run `/plugin update tooky-skills` when you want my latest.
 
 <details>
-<summary><strong>Codex, and other agents</strong></summary>
+<summary><strong>Working on the skills themselves</strong></summary>
+
+If you are editing the skills rather than just using them, clone the repo and run:
 
 ```bash
-npx skills@latest add mattpocock/skills
+./scripts/link-skills.sh
 ```
 
-Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take, so make sure `setup-matt-pocock-skills` is one of them.**
+That symlinks every skill into `~/.claude/skills` and `~/.agents/skills`, which also covers Codex and other Agent Skills harnesses. An edit in the repo is live in your next session, with no reinstall step.
 
-A native Codex plugin is on the roadmap (see [`.agents/adr/0002-ship-as-a-claude-code-plugin.md`](./.agents/adr/0002-ship-as-a-claude-code-plugin.md)).
-
-</details>
-
-<details>
-<summary><strong>For tinkerers</strong></summary>
-
-Use the same installer, on any agent, including Claude Code:
-
-```bash
-npx skills@latest add mattpocock/skills
-```
-
-It writes the skills into your repo as ordinary files you own and can edit. Nothing updates behind your back; pull my latest changes when you want them with `npx skills update`.
+Pick this **or** the plugin, not both: running both leaves you with every skill twice.
 
 </details>
 
